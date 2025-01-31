@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 import zoneinfo
 from pathlib import Path
 import os
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide" # Suppress the annoying advertisement by setting an env var
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide" # Suppress the annoying advertisement with an env var
 import pygame
 del os
 import time
@@ -47,7 +47,7 @@ def play_alert_sound():
                 time.sleep(0.1)
     except Exception as e:
         print(f"Error playing sound: {e}")
-    except KeyboardInterrupt:
+    except KeyboardInterrupt: # ctrl-c to stop the audio and return to check_for_new_meetings()
         return
 
 def check_for_new_meetings():
